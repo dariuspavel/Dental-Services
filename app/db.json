@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "createdAt": 1662242155446,
+      "id": "=r6WdV7U"
+    },
+    {
+      "username": "asd",
+      "password": "user",
+      "createdAt": 1662651795035,
+      "id": "CzUVL6B"
+    },
+    {
+      "username": "new",
+      "password": "user",
+      "createdAt": 1662652422074,
+      "id": "uaEdjUq"
+    }
+  ],
+  "messages": [
+    {
+      "message": "Hello World",
+      "createdAt": 1662292268180,
+      "id": 1
+    }
+  ],
+  "product":[
+    {
+      "id":1,
+      "name":"Laptop",
+      "picture": "https://p1.akcdn.net/full/812625993.microsoft-surface-laptop-4-5bt-00069.jpg"
+    }
+  ]
+}
