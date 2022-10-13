@@ -43,9 +43,9 @@ server.get('/echo', (req, res) => {
 
 // Add to all entities an createdAt field.
 server.use((req, res, next) => {
-  if (req.method === 'POST') {
-    req.body.createdAt = Date.now()
-  }
+  // if (req.method === 'POST') {
+    
+  // }
   next()
 })
 
@@ -54,7 +54,7 @@ server.use((req, res, next) => {
   if (req.originalUrl === '/users' && req.method === 'POST') {
     const data = router.db.getState();
     const existingUser = data.users.find(it => {
-      return it && it.username === req.body.username
+      return it && it.mail === req.body.mail
     });
     if (existingUser) {
       res.status(500).send("Username already exists");
