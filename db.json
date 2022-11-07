@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "id": 1667676592966,
+      "firstname": "Darius",
+      "lastname": "Marius",
+      "password": "asdfgh",
+      "email": "darius@yahoo.com",
+      "phone": 3423423423
+    }
+  ],
+  "History": [
+    {}
+  ]
+}
