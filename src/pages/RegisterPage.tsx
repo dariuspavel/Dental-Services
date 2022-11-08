@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Person } from '../Interface/PersonDetails';
 import "../css/RegisterPage.css"
 import {createAccount } from '../api/BackendApi';
+import { useNavigate } from 'react-router-dom';
 
 export const RegisterPage = () => {
+
+    const navigate = useNavigate();
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -27,7 +30,7 @@ export const RegisterPage = () => {
        return false;
     }
 
-    const handleRegister = () => {
+    const HandleRegister = () => {
 
         async function doRequest() {
             try {
@@ -45,7 +48,7 @@ export const RegisterPage = () => {
             }
         }
         doRequest();
-
+        navigate("/");
     }
    
     const verifyFirstName = (): any => { 
@@ -178,10 +181,12 @@ export const RegisterPage = () => {
        return <> <input type="tel"  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" className='phone' onChange={e => setPhone(e.target.value)} /> <br/> </>
     }
     
-    const verifySubmit = (): any => {
-    
+    const VerifySubmit = (): any => {
+        
         if (isInputValid()) {
-            return <> <button onClick={handleRegister}> Submit </button></>
+
+            return <> <button onClick={HandleRegister}> Submit </button></>
+            
         }
         return <> <input type="submit" value="Submit" disabled name="" id="" /> </>
     }
@@ -200,7 +205,7 @@ export const RegisterPage = () => {
         {verifyEmail()}
         <label >Phone</label> <br/>
         {verifyPhoneNr()}
-        {verifySubmit()}
+        {VerifySubmit()}
 
     
     </>
