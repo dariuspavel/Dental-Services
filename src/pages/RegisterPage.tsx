@@ -22,6 +22,11 @@ export const RegisterPage = () => {
     let isEmail: boolean = false;
     let isPhone: boolean = false;
 
+    const handleBack = () => {
+        navigate("/");
+        return <> <button onClick={handleBack}>Back</button></>
+    }
+
     const isInputValid = (): boolean => {
 
        if (isFirstName && isLastName && isPassword && isConfirmPass && isEmail && isPhone) {
@@ -206,7 +211,6 @@ export const RegisterPage = () => {
         <label >Phone</label> <br/>
         {verifyPhoneNr()}
         {VerifySubmit()}
-
-    
+        {handleBack()}
     </>
 }

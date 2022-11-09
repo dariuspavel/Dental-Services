@@ -18,6 +18,10 @@ export const LoginPage = () => {
     const [message, setMessage] = useState("");
 
     const { token, setToken } = useTokenState();
+    
+    const handleBack = () => {
+        return navigate("/");
+    }
 
     const handleLogin = async () => {
         const result = await login(email, password);
@@ -29,8 +33,8 @@ export const LoginPage = () => {
         if (body.length > 0) {
             const id = body[0].id;
             setMessage("User logged in.");
-            navigate("/");
             cookies.set("id", id, { path: '/' });
+            navigate("/");
             setToken(id);
 
         } else {
@@ -43,5 +47,6 @@ export const LoginPage = () => {
         <input type="text" placeholder='Your e-mail address' onChange={e => setEmail(e.target.value)} /> <br />
         <input type="password" placeholder='Password' onChange={e => setPassword(e.target.value)} />  <br />
         <button onClick={handleLogin} >Login</button>
+        <button onClick={handleBack}>Back</button>
     </>
 }
