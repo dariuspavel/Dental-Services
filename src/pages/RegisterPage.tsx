@@ -3,6 +3,7 @@ import { Person } from '../Interface/PersonDetails';
 import "../css/RegisterPage.css"
 import {createAccount } from '../api/BackendApi';
 import { useNavigate } from 'react-router-dom';
+import { Role } from './Roles';
 
 export const RegisterPage = () => {
 
@@ -23,8 +24,7 @@ export const RegisterPage = () => {
     let isPhone: boolean = false;
 
     const handleBack = () => {
-        navigate("/");
-        return <> <button onClick={handleBack}>Back</button></>
+         return navigate("/");
     }
 
     const isInputValid = (): boolean => {
@@ -41,6 +41,7 @@ export const RegisterPage = () => {
             try {
                 let newPerson: Person = {
                     id: Date.now(),
+                    role: Role.CUSTOMER,
                     firstname: firstName,
                     lastname: lastName,
                     password: password,
@@ -211,6 +212,6 @@ export const RegisterPage = () => {
         <label >Phone</label> <br/>
         {verifyPhoneNr()}
         {VerifySubmit()}
-        {handleBack()}
+        <button onClick={handleBack}>Back</button>
     </>
 }

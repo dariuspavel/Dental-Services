@@ -1,5 +1,8 @@
+import { Role } from "../pages/Roles";
+
 export interface Person {
     id: number,
+    role: Role,
     password: string,
     firstname: string,
     lastname: string,

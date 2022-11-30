@@ -2,11 +2,30 @@
   "users": [
     {
       "id": 1667676592966,
+      "role": "Customer",
       "firstname": "Darius",
       "lastname": "Marius",
       "password": "asdfgh",
       "email": "darius@yahoo.com",
       "phone": 3423423423
+    },
+    {
+      "id": 1668986789580,
+      "role": "Doctor",
+      "firstname": "doctor",
+      "lastname": "doctor",
+      "password": "doctor",
+      "email": "doctor@gmail.com",
+      "phone": 1234567891
+    },
+    {
+      "id": 1668986811915,
+      "role": "Admin",
+      "firstname": "admin",
+      "lastname": "admin",
+      "password": "admin",
+      "email": "admin@gmail.com",
+      "phone": 1234567891
     }
   ],
   "History": [

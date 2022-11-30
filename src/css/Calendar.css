@@ -1,0 +1,70 @@
+.box {
+    display: inline-flex;
+    position: relative;
+    left: 3px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 0px;
+    background-color: oldlace;
+    color: black;
+}
+
+.box:hover {
+    background-color: grey;
+    opacity: 45%;
+}
+
+.calendarBox {
+    background-color: blanchedalmond;
+    position: relative;
+    left: 25%;
+    width: 250px;
+    height: 225px;
+}
+
+.increaseDayButton {
+    display: inline;
+    position: absolute;
+    right: 0px;
+    top: 2px;
+}
+
+.decreaseDayButton {
+    display: inline;
+    position: absolute;
+    left: 0px;
+    top: 2px;
+}
+
+.increaseMonthButton {
+    display: inline;
+    position: absolute;
+    right: 25px;
+    top: 2px;
+}
+
+.decreaseMonthButton {
+    display: inline;
+    position: absolute;
+    left: 25px;
+    top: 2px;
+}
+
+.month {
+    display: inline;
+    position: relative;
+    text-align: center;
+}
+
+
+#month{
+    text-align: center;
+    height: 0px;    
+}
+
+.textBox {
+    position: relative;
+    left: 5px;
+    top: -15px;
+}
