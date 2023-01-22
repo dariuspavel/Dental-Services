@@ -1,4 +1,4 @@
-import { Role } from "../pages/Roles";
+import { Role } from "./Roles";
 
 export interface Person {
     id: number,

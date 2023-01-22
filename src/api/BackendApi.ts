@@ -59,3 +59,22 @@ export async function login(email: string, password: string) {
     return response;
 }
 
+export async function saveappointment(person: Person) {
+    const path = `${BACKEND_URL}/users`;
+
+    const response = await fetch(path, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(person)
+    });
+    
+    return response.json();
+}
+

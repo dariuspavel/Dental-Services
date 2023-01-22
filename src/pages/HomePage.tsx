@@ -1,12 +1,13 @@
 import React from 'react';
 import { Cookies } from 'react-cookie';
 import { Link, useNavigate } from 'react-router-dom';
-import "../css/FrontPage.css"
+import "../css/HomePage.css"
 import { CalendarView } from './Calendar';
+import { SignInPageView } from './SignInPage';
 import { useTokenState } from './TokenContext';
 
 
-export const HomePage = () => {
+export const HomePageView = () => {
 
 
     const navigate = useNavigate();
@@ -14,16 +15,11 @@ export const HomePage = () => {
     const id = cookies.get("id");
 
     const handleSingin = () => {
-        return navigate("/login");
+        navigate("/login");
     }
 
     const handleSinup = () => {
-       return navigate("/register");
-    }
-
-    const handleSignout = () => {
-        cookies.set("id", "");
-        return navigate("/");
+        navigate("/register");
     }
     
     const Logged = () => {
@@ -31,8 +27,7 @@ export const HomePage = () => {
 
         if (id) {
             return<>
-            <button className='signoutButton' onClick={handleSignout}> Sign out </button>
-            {CalendarView()}
+            {SignInPageView()}
         </>
         } else {
             return<>
