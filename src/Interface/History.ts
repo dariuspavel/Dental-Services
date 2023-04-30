@@ -1,8 +1,9 @@
 
 
-export interface History {
-    date: number,
-    hour: number,
+export interface CustomerHistory {
+    date: string,
+    hour: string,
     doctor: string,
+    reason: string
 
 }

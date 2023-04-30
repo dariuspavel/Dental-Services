@@ -1,6 +1,9 @@
 import { useState } from "react"
 import "../css/Calendar.css"
 
+export let getSelectedDay = 0;
+export let getSelectedMonth = 0;
+export let getSelectedYear = 0;
 
 export const CalendarView = () => {
 
@@ -27,6 +30,10 @@ export const CalendarView = () => {
     const [day, setDay] = useState(currentTime.getDate());
     const [month, setMonth] = useState(currentTime.getMonth()+1);
     const [year, setYear] = useState(currentTime.getFullYear());
+
+    getSelectedDay = day;
+    getSelectedMonth = month;
+    getSelectedYear = year;
 
     // Increase time when the button is pressed
    const increaseDayTime = () => {
@@ -155,7 +162,6 @@ export const CalendarView = () => {
         
         
        
-        
         {CalendarBoxView()}
         
 

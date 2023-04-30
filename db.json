@@ -28,7 +28,41 @@
       "phone": 1234567891
     }
   ],
-  "History": [
-    {}
+  "history": [
+    {
+      "date": "Fri Feb 03 2023",
+      "hour": "11:40:12 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 1
+    },
+    {
+      "date": "Mon Feb 06 2023",
+      "hour": "8:51:45 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 2
+    },
+    {
+      "date": "Sun Feb 12 2023",
+      "hour": "3:09:13 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 3
+    },
+    {
+      "date": "Sun Feb 12 2023",
+      "hour": "3:13:31 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 4
+    },
+    {
+      "date": "Sun Feb 12 2023",
+      "hour": "3:13:31 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 5
+    }
   ]
 }

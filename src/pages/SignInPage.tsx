@@ -1,14 +1,17 @@
 import { Cookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import { CalendarView } from "./Calendar"
+import { CalendarView, getSelectedDay, getSelectedMonth, getSelectedYear } from "./Calendar"
 import "../css/SignInPage.css"
 import { useState } from "react";
+import { getAppointment, saveAppointment } from "../api/BackendApi";
+import { CustomerHistory } from "../Interface/History";
 
 
 export const SignInPageView = () => {
     
     const navigate = useNavigate();
     const cookies = new Cookies();
+    const currentDate = new Date();
 
     var workProgram: Array<Object> = new Array();
     const [displayProgram, setDisplayProgram] = useState<Array<Object>>(workProgram);
@@ -26,45 +29,64 @@ export const SignInPageView = () => {
         workProgram.forEach(function(item){
             temp.push(item);
         });
+        async function doRequest() {
+
+            try {
+                let addAppmntToHistory: CustomerHistory = {
+                    date: currentDate.toDateString(),
+                    hour: currentDate.toLocaleTimeString(),
+                    doctor: "Doc", 
+                    reason: "Simple check"
+                    }
+                await saveAppointment(addAppmntToHistory);
+            } catch  {
+                console.log("Cannot create history");
+            }
+        }
+        doRequest();
         setDisplayProgram(temp);
     }
 
-    let currentDate = new Date();
-
-    for (let i = 0; i < 14; i++) {
-        // if (currentDate.getHours() > 8 && currentDate.getHours() < 22) {
-        // if (currentDate.getHours() < 7 && currentDate.getHours() < 22) {
-        //     if ( > currentDate.getHours()) {
-        //         // workProgram.push(<p className={"unavailableProgram"} id={i.toString()}>{(i+8)+":00"}</p>);
-        //         workProgram.push(<p onClick={createAppointment} className={"validProgram"} id={i.toString()}>{(i+8)+":00"}</p>);
-        //     }
-        //     else {
-        //         workProgram.push(<p className={"unavailableProgram"} id={i.toString()}>{(i+8)+":00"}</p>);
-        //     }
-        // }
-        
-
-        if (currentDate.getHours() > 7 && currentDate.getHours() < 22) {
-
-            if (i > currentDate.getHours()) {
-                workProgram.push(<p onClick={createAppointment} className={"validProgram"} id={i.toString()}>{(i+8)+":00"}</p>);
-            }
-            else {
-                workProgram.push(<p className={"unavailableProgram"} id={i.toString()}>{(i+8)+":00"}</p>);
-            }
+    const handleAppointment = async () => {
+        const result = await getAppointment(1);
+        if (!result.ok) {
+            // setMessage("Invalid username or password")
         }
-        else {
-            workProgram.push(<p className={"unavailableProgram"} id={i.toString()}>{(i+8)+":00"}</p>);
+
+        const body = await result.json();
+        if (body.length > 0) {
+
+            const appointment = body[0];
+            let fullDate: Date = new Date(getSelectedYear, getSelectedMonth-1, getSelectedDay);
+            let strgFullDate: string = fullDate.toDateString();
+            if (strgFullDate === appointment.date) {
+                workProgram.push(<p className={"invalidProgram"}>{"10:00"}</p>);
+                
+            }
+        } else {
+            // setMessage("Invalid username or password");
         }
     }
 
-    
+    for (let i = 0; i < 14; i++) {
+        if (currentDate.getHours() > 7 && currentDate.getHours() < 24) {
+            if (i > (currentDate.getHours())-8) {
+                workProgram.push(<p onClick={createAppointment} className={"validProgram"} id={i.toString()}>{(i+8)+":00"}</p>);
+            }
+            else {
+                workProgram.push(<p className={"unavailableProgram"}>{(i+8)+":00"}</p>);
+            }
+        }
+        else {
+            // workProgram.push(<p className={"unavailableProgram"}>{(i+8)+":00"}</p>);
+        }
+    }
  
+    handleAppointment();
+
     return <>
         <button className='signoutButton' onClick={handleSignout}> Sign out </button>
         {CalendarView()}
-
-        
         <div className="displayProgram">
 
             <div>
