@@ -8,7 +8,7 @@ server.use(middlewares)
 
 function isAuthorized(req) {
   // allow users to register/login without token..
-  if (req.originalUrl.startsWith('/users')) {
+  if (req.originalUrl.startsWith('/users') || req.originalUrl.startsWith('/history')) {
     return true;
   }
 

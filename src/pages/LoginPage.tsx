@@ -43,10 +43,12 @@ export const LoginPage = () => {
     }
 
     return<>
-        <div>{message}</div><br />
-        <input type="text" placeholder='Your e-mail address' onChange={e => setEmail(e.target.value)} /> <br />
-        <input type="password" placeholder='Password' onChange={e => setPassword(e.target.value)} />  <br />
-        <button onClick={handleLogin} >Login</button>
-        <button onClick={handleBack}>Back</button>
+        <div className='pinboard'>
+        <div className='messageHandler'>{message}</div><br />
+        <input className='emailInput' type="text" placeholder='Your e-mail address' onChange={e => setEmail(e.target.value)} /> <br />
+        <input className='passwordInput' type="password" placeholder='Password' onChange={e => setPassword(e.target.value)} />  <br />
+        <button onClick={handleLogin} className="loginButton" >Login</button>
+        <button onClick={handleBack} className="backButton">Back</button>
+        </div>
     </>
 }

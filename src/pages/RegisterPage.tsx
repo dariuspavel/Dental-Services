@@ -3,7 +3,7 @@ import { Person } from '../Interface/PersonDetails';
 import "../css/RegisterPage.css"
 import {createAccount } from '../api/BackendApi';
 import { useNavigate } from 'react-router-dom';
-import { Role } from './Roles';
+import { Role } from '../Interface/Roles';
 
 export const RegisterPage = () => {
 
@@ -64,7 +64,7 @@ export const RegisterPage = () => {
 
             return <> <input 
             type="text" 
-            style={{borderColor: "green", borderStyle: 'solid'}} 
+            style={{borderColor: "limegreen", borderStyle: 'solid'}} 
             className='first-name' 
             onChange={e => setFirstName(e.target.value)} /> <br/>
             </>
@@ -80,7 +80,7 @@ export const RegisterPage = () => {
 
             return <> <input 
             type="text" 
-            style={{borderColor: "green", borderStyle: 'solid'}} 
+            style={{borderColor: "limegreen", borderStyle: 'solid'}} 
             className='last-name' 
             onChange={e => setLastName(e.target.value)} /> <br/>
             </>
@@ -104,7 +104,7 @@ export const RegisterPage = () => {
 
             return <> <input 
             type="password" 
-            style={{borderColor: "green" , borderStyle: 'solid'}} 
+            style={{borderColor: "limegreen" , borderStyle: 'solid'}} 
             className='password'
             onChange={e => setPassword(e.target.value)} /> <br/> </>;
         }
@@ -120,7 +120,7 @@ export const RegisterPage = () => {
             
             return <> <input 
             type="password" 
-            style={{borderColor: "green" , borderStyle: 'solid'}} 
+            style={{borderColor: "limegreen" , borderStyle: 'solid'}} 
             className='confirm-password'
             onChange={e => setConfirmPassword(e.target.value)} /> <br/> </>
         }
@@ -146,7 +146,7 @@ export const RegisterPage = () => {
             
             return <> <input 
             type="email" 
-            style={{borderColor: "green", borderStyle: 'solid'}} 
+            style={{borderColor: "limegreen", borderStyle: 'solid'}} 
             className='email' 
             onChange={e => setEmail(e.target.value)} /><br /> </>
         }
@@ -169,7 +169,7 @@ export const RegisterPage = () => {
             isPhone = true;
             return <> <input 
             type="tel"
-            style={{borderColor: "green", borderStyle: 'solid'}}  
+            style={{borderColor: "limegreen", borderStyle: 'solid'}}  
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" 
             className='phone' 
             onChange={e => setPhone(e.target.value)} /> <br/> 
@@ -191,27 +191,28 @@ export const RegisterPage = () => {
         
         if (isInputValid()) {
 
-            return <> <button onClick={HandleRegister}> Submit </button></>
+            return <> <button className='submitButton' id="buttonEnable" onClick={HandleRegister}> Submit </button></>
             
         }
-        return <> <input type="submit" value="Submit" disabled name="" id="" /> </>
+        return <> <input className='submitButton' id="buttonDisable" type="submit" value="Submit" disabled /> </>
     }
 
     return<>
-
-        <label >First Name</label> <br/>
-        {verifyFirstName()}
-        <label >Last Name</label> <br/>
-        {verifyLastName()}
-        <label >Password</label> <br/>
-        {verifyPassword()}
-        <label >Confirm Password</label> <br/>
-        {verifyConfirmPassword()}
-        <label >Email</label> <br/>
-        {verifyEmail()}
-        <label >Phone</label> <br/>
-        {verifyPhoneNr()}
-        {VerifySubmit()}
-        <button onClick={handleBack}>Back</button>
+        <div className='board'>
+            <label >First Name</label> <br/>
+            {verifyFirstName()}
+            <label >Last Name</label> <br/>
+            {verifyLastName()}
+            <label >Password</label> <br/>
+            {verifyPassword()}
+            <label >Confirm Password</label> <br/>
+            {verifyConfirmPassword()}
+            <label >Email</label> <br/>
+            {verifyEmail()}
+            <label >Phone</label> <br/>
+            {verifyPhoneNr()}
+            {VerifySubmit()}
+            <button className='registerBackButton' onClick={handleBack}>Back</button>
+            </div>
     </>
 }
