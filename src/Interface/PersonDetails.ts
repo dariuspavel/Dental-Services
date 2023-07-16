@@ -1,3 +1,4 @@
+import { CustomerHistory } from "./History";
 import { Role } from "./Roles";
 
 export interface Person {
@@ -9,4 +10,5 @@ export interface Person {
     middlename?: string,
     email: string,
     phone: number,
+    history: CustomerHistory[] 
 }

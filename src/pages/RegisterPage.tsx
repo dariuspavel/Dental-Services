@@ -46,7 +46,8 @@ export const RegisterPage = () => {
                     lastname: lastName,
                     password: password,
                     email: email,
-                    phone: Number(phone)
+                    phone: Number(phone),
+                    history: []
                     }
                 await createAccount(newPerson);
             } catch  {

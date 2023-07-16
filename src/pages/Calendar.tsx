@@ -1,10 +1,16 @@
 import { useState } from "react"
 import "../css/Calendar.css"
 
-export let getSelectedDay = 0;
-export let getSelectedMonth = 0;
-export let getSelectedYear = 0;
+interface selectedDate{
 
+    getSelectedDay: number;
+    getSelectedMonth: number;
+    getSelectedYear: number;
+}
+
+export let getSelectedDate: selectedDate;
+
+// The calendar view with all the components(buttons, panels, images)
 export const CalendarView = () => {
 
     const currentTime = new Date();
@@ -23,6 +29,7 @@ export const CalendarView = () => {
         [12, "December"]
     ]);
 
+    // Get how many days are in a month
     const getDaysInMonth = (year:number, month:number) => {
         return new Date(year, month, 0).getDate();
     }
@@ -31,11 +38,9 @@ export const CalendarView = () => {
     const [month, setMonth] = useState(currentTime.getMonth()+1);
     const [year, setYear] = useState(currentTime.getFullYear());
 
-    getSelectedDay = day;
-    getSelectedMonth = month;
-    getSelectedYear = year;
+    getSelectedDate = {getSelectedDay: day, getSelectedMonth: month, getSelectedYear: year};
 
-    // Increase time when the button is pressed
+    // Increase day time when the button is pressed
    const increaseDayTime = () => {
 
     if(day === getDaysInMonth(year, month) && month === 12){
@@ -50,10 +55,9 @@ export const CalendarView = () => {
     else if (day < getDaysInMonth(year,month)) {
         setDay(day+1);
     }
-
    }
 
-   // Decrease time when the button is pressed
+   // Decrease day time when the button is pressed
    const decreaseDayTime = () => {
 
     if(day === 1 && month === 1){
@@ -68,9 +72,9 @@ export const CalendarView = () => {
     else if (day > 1) {
         setDay(day-1);
     }
-    
    }
 
+   // Increment month time when the button is pressed
    const increaseMonthTime = () => {
 
     if (month === 12) {
@@ -82,9 +86,9 @@ export const CalendarView = () => {
         setMonth(month+1);
         setDay(1);
     }
-
    }
 
+   // Decrease month time when the button is pressed
    const decreaseMonthTime = () => {
 
     if (month === 1) {
@@ -96,16 +100,16 @@ export const CalendarView = () => {
         setMonth(month-1);
         setDay(1);
     }
-
    }
 
-   // Create the calendar boxes view
-
+   /* Create the calendar boxes view */
    const CalendarBoxView = () => {
 
     let storeBoxes: Array<Object> = new Array();
     let lastId: number = -1;
 
+
+    /* Select a day from the calendar */
     const selectBox = (e: any) => {
         let temp: Array<Object> = new Array();
         let currentId: number = Number(e.currentTarget.id);
@@ -123,18 +127,22 @@ export const CalendarView = () => {
         });
         lastId = currentId;
         }
-    
-    for(let i = 1; i <= getDaysInMonth(year, month); i++){
 
-        if (i === day) {
-            storeBoxes.push(<div onClick={selectBox} className="todayBox" id={(i).toString()} ><p className="textBox">{i}</p></div>)
-        }
-        else {
-            storeBoxes.push(<div onClick={selectBox} className="box" id={(i).toString()}><p className="textBox">{i}</p></div>)
+    /* Display each day from a month */
+    const displayDaysInMonth = () => {
+        for(let i = 1; i <= getDaysInMonth(year, month); i++){
+
+            if (i === day) {
+                storeBoxes.push(<div onClick={selectBox} className="todayBox" id={(i).toString()} ><p className="textBox">{i}</p></div>)
+            }
+            else {
+                storeBoxes.push(<div onClick={selectBox} className="box" id={(i).toString()}><p className="textBox">{i}</p></div>)
+            }
         }
     }
 
-    return (<><div className="calendarBox">
+    return (<>
+        <div className="calendarBox">
         <button className="decreaseDayButton" onClick={decreaseDayTime}>{"<"}</button>
         <button className="decreaseMonthButton" onClick={decreaseMonthTime}>{"<<"}</button>
         <div className="month">
@@ -152,18 +160,16 @@ export const CalendarView = () => {
             <div id="week-sat">Sat</div>
             <div id="week-sun">Sun</div>
         </div>
+        {displayDaysInMonth()}
         {Object.assign(storeBoxes)}
-        </div></>);
-        
-
+        </div>
+        </>);
    }
 
     return <>
-        
-        
-       
+              
         {CalendarBoxView()}
-        
+
 
     </>
 }

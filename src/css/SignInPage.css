@@ -2,19 +2,31 @@
     position: relative;
     top: 10px;
     left: 150px;
-    width: 700px;
-    height: 75px;
+    width: 750px;
+    height: 80px;
     background-color: bisque;
     border-radius: 15px;
+    display: flex;
 }
 
 
-/* .workProgram {
-    top: 15px;
-    left: 25px;
-    margin: 2px;
-    background-color: bisque;
-} */
+.workProgram {
+}
+
+.appointmentFree {
+    position: relative;
+    top: 25px;
+    left: 5px;
+    width: 45px;
+    height: 25px;
+    display: inline-flex;
+    /* text-indent: 10px; */
+    
+}
+
+.appointmentFree:hover {
+    background-color: grey;
+}
 
 .hourInterval {
     position: relative;
