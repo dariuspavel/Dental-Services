@@ -98,3 +98,8 @@
     line-height: 20px;
     padding: 10px 12px;
   }
+
+.submitAppointentPanel {
+    position: relative;
+    background-color: cadetblue;
+}
