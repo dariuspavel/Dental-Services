@@ -26,6 +26,16 @@
       "password": "admin",
       "email": "admin@gmail.com",
       "phone": 1234567891
+    },
+    {
+      "id": 1687711240112,
+      "role": "Customer",
+      "firstname": "Test1",
+      "lastname": "Test2",
+      "password": "asdfgh",
+      "email": "test1@yahoo.com",
+      "phone": null,
+      "history": []
     }
   ],
   "history": [
@@ -63,6 +73,104 @@
       "doctor": "Doc",
       "reason": "Simple check",
       "id": 5
+    },
+    {
+      "date": "Mon May 01 2023",
+      "hour": "12:31:15 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 6
+    },
+    {
+      "date": "Mon May 01 2023",
+      "hour": "7:10:54 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 7
+    },
+    {
+      "date": "Mon May 01 2023",
+      "hour": "7:10:54 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 8
+    },
+    {
+      "date": "Mon May 01 2023",
+      "hour": "7:12:08 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 9
+    },
+    {
+      "date": "Mon May 01 2023",
+      "hour": "7:12:08 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 10
+    },
+    {
+      "date": "Mon May 01 2023",
+      "hour": "7:12:08 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 11
+    },
+    {
+      "date": "Mon May 01 2023",
+      "hour": "7:12:41 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 12
+    },
+    {
+      "date": "Mon May 01 2023",
+      "hour": "7:13:28 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 13
+    },
+    {
+      "date": "Thu Jun 01 2023",
+      "hour": "2:21:35 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 14
+    },
+    {
+      "date": "Thu Jun 01 2023",
+      "hour": "2:21:35 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 15
+    },
+    {
+      "date": "Thu Jun 01 2023",
+      "hour": "2:21:35 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 16
+    },
+    {
+      "date": "Thu Jun 01 2023",
+      "hour": "2:21:35 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 17
+    },
+    {
+      "date": "Thu Jun 01 2023",
+      "hour": "2:21:35 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 18
+    },
+    {
+      "date": "Thu Jun 01 2023",
+      "hour": "2:21:35 PM",
+      "doctor": "Doc",
+      "reason": "Simple check",
+      "id": 19
     }
   ]
 }

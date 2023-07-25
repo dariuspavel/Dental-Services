@@ -28,7 +28,7 @@ body {
     width: 35px;
     height: 35px;
     border-radius: 0px;
-    background-color: grey;
+    background-color: grey; /* rgb(192, 36, 36); */
     color: black;
 }
 
@@ -49,7 +49,7 @@ body {
     position: relative;
     left: 37%;
     width: 250px;
-    height: 250px;
+    height: 265px;
 }
 
 .increaseDayButton {
