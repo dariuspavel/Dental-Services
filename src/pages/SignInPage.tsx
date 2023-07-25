@@ -35,12 +35,39 @@ export const SignInPageView = () => {
         }
     }
 
+    const createAppointment = () => {
+
+        async function doRequest() {
+            try {
+                let newPerson: Person = {
+                    id: Date.now(),
+                    role: Role.CUSTOMER,
+                    firstname: firstName,
+                    lastname: lastName,
+                    password: password,
+                    email: email,
+                    phone: Number(phone),
+                    history: []
+                    }
+                await saveAppointment(newPerson);
+            } catch  {
+                //console.log("User already exists");
+            }
+        }
+        doRequest();
+        navigate("/");
+    }
+
     const displayAppointmentSubmit = () => {
 
         return <>
 
-            <div className="">
+            <div className="submitAppointentPanel">
 
+                <p>Do you want to make the appointment ?</p>
+                <button onClick={handleAppointment}>Yes</button>
+                <button>No</button>
+                
             </div>
         
         </>
@@ -49,6 +76,9 @@ export const SignInPageView = () => {
     const getDateFromSelectedDay = () => {
         console.log("Day:" + getSelectedDate.getSelectedDay + "\n" + "Month:" + getSelectedDate.getSelectedMonth + "\n" + "Year:" + getSelectedDate.getSelectedYear);
         console.log(getSelectedDate.getSelectedDay +""+ getSelectedDate.getSelectedMonth +""+ getSelectedDate.getSelectedYear);
+        return <>
+         
+        </> 
     }
 
     const displayWorkTime = () => {
@@ -87,7 +117,7 @@ export const SignInPageView = () => {
         <button className='signoutButton' onClick={handleSignout}> Sign out </button>
         {CalendarView()}
         {doctorScheduleLabel("https://media.istockphoto.com/id/138205019/photo/happy-healthcare-practitioner.jpg?s=612x612&w=0&k=20&c=b8kUyVtmZeW8MeLHcDsJfqqF0XiFBjq6tgBQZC7G0f0=")}    
-    
+        {displayAppointmentSubmit()}
 
     </>
 }
