@@ -1,8 +1,8 @@
 
 
 export interface CustomerHistory {
-    date: string,
-    hour: string,
+    date: number,
+    hour: number,
     doctor: string,
     reason: string
 

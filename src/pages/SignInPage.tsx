@@ -6,6 +6,7 @@ import { useState } from "react";
 import { getAppointment, saveAppointment } from "../api/BackendApi";
 import { CustomerHistory } from "../Interface/History";
 
+export let getSelectedHour: number;
 
 export const SignInPageView = () => {
     
@@ -39,15 +40,11 @@ export const SignInPageView = () => {
 
         async function doRequest() {
             try {
-                let newPerson: Person = {
-                    id: Date.now(),
-                    role: Role.CUSTOMER,
-                    firstname: firstName,
-                    lastname: lastName,
-                    password: password,
-                    email: email,
-                    phone: Number(phone),
-                    history: []
+                let newPerson: CustomerHistory = {
+                    date: Number(getSelectedDate.getSelectedDay +""+ getSelectedDate.getSelectedMonth +""+ getSelectedDate.getSelectedYear),
+                    hour: 1,
+                    doctor: "test",
+                    reason: "test"
                     }
                 await saveAppointment(newPerson);
             } catch  {
