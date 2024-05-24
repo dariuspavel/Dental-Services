@@ -1,7 +1,5 @@
+/* 
 
-body {
-    background-color: rgb(135, 206, 250, 0.80);
-}
 
 .box {
     display: inline-flex;
@@ -28,7 +26,7 @@ body {
     width: 35px;
     height: 35px;
     border-radius: 0px;
-    background-color: grey; /* rgb(192, 36, 36); */
+    background-color: grey; 
     color: black;
 }
 
@@ -193,4 +191,4 @@ body {
     left: 100px;
 }
 
-
+ */

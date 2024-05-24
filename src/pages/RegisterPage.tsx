@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Person } from '../Interface/PersonDetails';
 import "../css/RegisterPage.css"
-import {createAccount } from '../api/BackendApi';
+// import {createAccount } from '../api/BackendApi';
 import { useNavigate } from 'react-router-dom';
 import { Role } from '../Interface/Roles';
 
@@ -35,28 +35,28 @@ export const RegisterPage = () => {
        return false;
     }
 
-    const HandleRegister = () => {
+    // const HandleRegister = () => {
 
-        async function doRequest() {
-            try {
-                let newPerson: Person = {
-                    id: Date.now(),
-                    role: Role.CUSTOMER,
-                    firstname: firstName,
-                    lastname: lastName,
-                    password: password,
-                    email: email,
-                    phone: Number(phone),
-                    history: []
-                    }
-                await createAccount(newPerson);
-            } catch  {
-                //console.log("User already exists");
-            }
-        }
-        doRequest();
-        navigate("/");
-    }
+    //     async function doRequest() {
+    //         try {
+    //             let newPerson: Person = {
+    //                 id: Date.now(),
+    //                 role: Role.CUSTOMER,
+    //                 firstname: firstName,
+    //                 lastname: lastName,
+    //                 password: password,
+    //                 email: email,
+    //                 phone: Number(phone),
+    //                 history: []
+    //                 }
+    //             await createAccount(newPerson);
+    //         } catch  {
+    //             //console.log("User already exists");
+    //         }
+    //     }
+    //     doRequest();
+    //     navigate("/");
+    // }
    
     const verifyFirstName = (): any => { 
        
@@ -192,7 +192,7 @@ export const RegisterPage = () => {
         
         if (isInputValid()) {
 
-            return <> <button className='submitButton' id="buttonEnable" onClick={HandleRegister}> Submit </button></>
+            return <> <button className='submitButton' id="buttonEnable"> Submit </button></>
             
         }
         return <> <input className='submitButton' id="buttonDisable" type="submit" value="Submit" disabled /> </>

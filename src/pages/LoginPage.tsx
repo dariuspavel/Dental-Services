@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { login} from '../api/BackendApi';
+// import { login} from '../api/BackendApi';
 import "../css/LoginPage.css"
 import { useTokenState } from './TokenContext';
 import { useNavigate  } from "react-router-dom";
@@ -24,22 +24,22 @@ export const LoginPage = () => {
     }
 
     const handleLogin = async () => {
-        const result = await login(email, password);
-        if (!result.ok) {
-            setMessage("Invalid username or password")
-        }
+        // const result = await login(email, password);
+        // if (!result.ok) {
+        //     setMessage("Invalid username or password")
+        // }
 
-        const body = await result.json();
-        if (body.length > 0) {
-            const id = body[0].id;
-            setMessage("User logged in.");
-            cookies.set("id", id, { path: '/' });
-            navigate("/");
-            setToken(id);
+        // const body = await result.json();
+        // if (body.length > 0) {
+        //     const id = body[0].id;
+        //     setMessage("User logged in.");
+        //     cookies.set("id", id, { path: '/' });
+        //     navigate("/");
+        //     setToken(id);
 
-        } else {
-            setMessage("Invalid username or password");
-        }
+        // } else {
+        //     setMessage("Invalid username or password");
+        // }
     }
 
     return<>
