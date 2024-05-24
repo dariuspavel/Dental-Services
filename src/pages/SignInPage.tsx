@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { CalendarView, getSelectedDate} from "./Calendar"
 import "../css/SignInPage.css"
 import { useState } from "react";
-import { getAppointment, saveAppointment } from "../api/BackendApi";
-import { CustomerHistory } from "../Interface/History";
 
 export let getSelectedHour: number;
 
@@ -19,42 +17,6 @@ export const SignInPageView = () => {
         window.location.reload();
     }
 
-    const handleAppointment = async () => {
-        const result = await getAppointment(cookies.get("id"));
-        if (!result.ok) {
-            // setMessage("Invalid username or password");
-        }
-
-        const body = await result.json();
-        if (body.length > 0) {
-            const id = body[0].id;
-            
-        
-
-        } else {
-            // setMessage("Invalid username or password");
-        }
-    }
-
-    const createAppointment = () => {
-
-        async function doRequest() {
-            try {
-                let newPerson: CustomerHistory = {
-                    date: Number(getSelectedDate.getSelectedDay +""+ getSelectedDate.getSelectedMonth +""+ getSelectedDate.getSelectedYear),
-                    hour: 1,
-                    doctor: "test",
-                    reason: "test"
-                    }
-                await saveAppointment(newPerson);
-            } catch  {
-                //console.log("User already exists");
-            }
-        }
-        doRequest();
-        navigate("/");
-    }
-
     const displayAppointmentSubmit = () => {
 
         return <>
@@ -62,7 +24,7 @@ export const SignInPageView = () => {
             <div className="submitAppointentPanel">
 
                 <p>Do you want to make the appointment ?</p>
-                <button onClick={handleAppointment}>Yes</button>
+                <button>Yes</button>
                 <button>No</button>
                 
             </div>
