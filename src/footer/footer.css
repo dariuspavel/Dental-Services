@@ -3,7 +3,7 @@
 }
 
 .footer{
-    position: relative;
+    position: absolute;
     width: 100%;
     background-color: #a2d9f5;
 }
@@ -30,7 +30,7 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    color: #0096FF;
+    color: var(--primary);
 }
 
 #sb_footer-links_div_align_left{
@@ -68,6 +68,12 @@ a{
     line-height: 15px;
     margin: 0.5rem 0;
     cursor: pointer;
+    text-align: center;
+    color: var(--white);
+}
+
+.sb_footer-links_div:first-child p{
+    text-align: left;
 }
 
 .sb_footer-below{

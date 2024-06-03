@@ -24,10 +24,6 @@ export const HomePageView = () => {
     const navigate = useNavigate();
     const cookies = new Cookies();
     const id = cookies.get("id");
-
-    
-
-    
     
     const Logged = () => {
         
@@ -44,8 +40,6 @@ export const HomePageView = () => {
 
     }
 
-    
-
     return<>
         <Header/>
         {Logged()}
@@ -54,7 +48,6 @@ export const HomePageView = () => {
             <title>Dental Services</title>
 
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-            <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
         </head>
 
         <body>
@@ -78,8 +71,26 @@ export const HomePageView = () => {
 
                     <div className="content">
                         <h3>our clinic is made for you</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nas</p>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nas</p>
+                        <p>Welcome to Dental Services, your trusted partner in comprehensive dental care. Our mission is to provide top-quality dental treatments that cater to the diverse needs of our community.
+                             Whether you're looking for routine check-ups, specialized treatments, or cosmetic procedures, Dental Services is dedicated to ensuring your oral health and enhancing your smile.</p>
+
+                        <p><b>Who We Are: <br /></b>
+                            Dental Services is a state-of-the-art dental clinic equipped with the latest technology and staffed by a team of highly skilled and experienced professionals. 
+                            Our team is composed of dedicated dentists, hygienists, and support staff who are passionate about delivering personalized care to each patient.</p>
+                        
+                        <p><b>Our Commitment:<br /></b>
+                        We believe that a healthy smile is a reflection of overall well-being. At Dental Services, we are committed to providing a comfortable, safe, and welcoming environment where patients of all ages can receive the best possible dental care.
+                         Our approach is patient-centered, focusing on individual needs and preferences to ensure a positive experience.</p>
+
+                        <p><b>Our Commitment:<br /></b>
+                            Our wide range of services includes preventive care, restorative treatments, orthodontics, and cosmetic dentistry. From teeth cleaning and fillings to braces and veneers, we use advanced techniques and materials to achieve optimal results.
+                            Our goal is to help you maintain healthy teeth and gums for a lifetime.</p>
+
+                        <p><b>Why Choose Us:<br /></b>
+                            <b>Expertise and Experience: <br /></b> Our team consists of highly qualified professionals with extensive experience in various fields of dentistry.
+                            <b>Personalized Care: <br /></b> We tailor our treatments to meet the unique needs of each patient, ensuring personalized and effective care.
+                            <b>Cutting-Edge Technology: <br /></b> We utilize the latest dental technology and techniques to provide high-quality services and ensure patient comfort.
+                            <b>Patient Education: <br /></b> We believe in empowering our patients with knowledge about their oral health and the treatments they receive, fostering informed decision-making.</p>
                         <a href="" className='btn'>read more</a>
                     </div>
                 </div>
@@ -120,50 +131,50 @@ export const HomePageView = () => {
                     <div className="swiper-wrapper">
 
                         <div className="swiper-slide slide">
-                            <div className="image">
+                            <div className="team-image">
                                 <img src={doctor_1} alt="" />
                             </div>
-                            <div className="content">
+                            <div className="box">
                                 <h3>Wilson Morales</h3>
                                 <span>Genral Surgeon</span>
                             </div>
                         </div>
 
                         <div className="swiper-slide slide">
-                            <div className="image">
+                            <div className="team-image">
                                 <img src={doctor_2} alt="" />
                             </div>
-                            <div className="content">
+                            <div className="box">
                                 <h3>Dixon Arnold</h3>
                                 <span>Genral Surgeon</span>
                             </div>
                         </div>
 
                         <div className="swiper-slide slide">
-                            <div className="image">
+                            <div className="team-image">
                                 <img src={doctor_3} alt="" />
                             </div>
-                            <div className="content">
+                            <div className="box">
                                 <h3>Jamie Hatfield</h3>
                                 <span>Genral Surgeon</span>
                             </div>
                         </div>
                         
                         <div className="swiper-slide slide">
-                            <div className="image">
+                            <div className="team-image">
                                 <img src={doctor_4} alt="" />
                             </div>
-                            <div className="content">
+                            <div className="box">
                                 <h3>Katherine Rowe</h3>
                                 <span>Genral Surgeon</span>
                             </div>
                         </div>
 
                         <div className="swiper-slide slide">
-                            <div className="image">
+                            <div className="team-image">
                                 <img src={doctor_5} alt=""/>
                             </div>
-                            <div className="content">
+                            <div className="box">
                                 <h3>Melanie Combs</h3>
                                 <span>Genral Surgeon</span>
                             </div>
@@ -175,7 +186,6 @@ export const HomePageView = () => {
 
             {/* <script src="../animation/HomePage.js"></script> */}
             <script src='src/animation/HomePage.js'></script>
-            <script src='https://unpkg.com/swiper@7/swiper-bundle.min.js'></script>
         </body>
 
 

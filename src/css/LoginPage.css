@@ -1,0 +1,46 @@
+.box-elements{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--light-bg);
+}
+
+.box-login{
+    width: 30%;
+    margin: auto;
+}
+
+.login .box-container-login .box-login{
+    padding: 10rem;
+    text-align: center;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: 5rem;
+}
+
+.box-login-buttons{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.box-input-login{
+    width: 80%;
+    border: 1px;
+    border-style: solid;
+    border-color: var(--light-bg);
+    margin: auto;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.box-forgot-pass-login p{
+    color: #0096FF;
+    text-align: left;
+    margin-left: 4rem;
+    margin-top: 2rem;
+}

@@ -33,28 +33,25 @@ const Footer=() => {
                     </div>
 
                     <div className="sb_footer-links_div" id="sb_footer-links_div_align_center">
-                        <h4>Partners</h4>
-                        <a href="">
-                            <p>tbd</p>
-                        </a>
-                        <a href="">
-                            <p>tbd</p>
-                        </a>
-                        <a href="">
-                            <p>tbd</p>
-                        </a>
+                        <h4>Contact</h4>
+                            <p>Strada 1 Decembrie 1989</p>
+                            <p>Cartiere: Piata Crucii, Stadion, Buziasului</p>
+                            <p>nr. 1-21; 2-24
+                               Codul postal: 300231
+                               Oficiu Postal: Timişoara 5
+                            </p>
                     </div>
 
                     <div className="sb_footer-links_div" id="sb_footer-links_div_align_left">
                         <h4>Company</h4>
-                        <a href="">
+                        <a href="#about">
                             <p>About</p>
                         </a>
-                        <a href="">
-                            <p>Team</p>
+                        <a href="#services">
+                            <p>Services</p>
                         </a>
-                        <a href="">
-                            <p>Contact</p>
+                        <a href="#team">
+                            <p>Team</p>
                         </a>
                     </div>
                 </div>
@@ -69,8 +66,8 @@ const Footer=() => {
             </div>
 
             <div className="sb_footer-below-links">
-                <a href=""><div><p>Terms & Conditions</p></div></a>
-                <a href=""><div><p>Privacy</p></div></a>
+                <a href="http://localhost:3000/terms&conditions"><div><p>Terms & Conditions</p></div></a>
+                <a href="http://localhost:3000/privacy"><div><p>Privacy</p></div></a>
             </div>
 
          </div>

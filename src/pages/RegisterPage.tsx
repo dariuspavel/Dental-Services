@@ -4,6 +4,8 @@ import "../css/RegisterPage.css"
 // import {createAccount } from '../api/BackendApi';
 import { useNavigate } from 'react-router-dom';
 import { Role } from '../Interface/Roles';
+import JsonServer from '../api/JsonServer';
+import Footer from '../footer/footer';
 
 export const RegisterPage = () => {
 
@@ -192,28 +194,41 @@ export const RegisterPage = () => {
         
         if (isInputValid()) {
 
-            return <> <button className='submitButton' id="buttonEnable"> Submit </button></>
+            return <> <button className='btn submitButton' id="buttonEnable"> Submit </button></>
             
         }
-        return <> <input className='submitButton' id="buttonDisable" type="submit" value="Submit" disabled /> </>
+        return <> <input className='btn submitButton' id="buttonDisable" type="submit" value="Submit" disabled /> </>
     }
 
     return<>
-        <div className='board'>
-            <label >First Name</label> <br/>
-            {verifyFirstName()}
-            <label >Last Name</label> <br/>
-            {verifyLastName()}
-            <label >Password</label> <br/>
-            {verifyPassword()}
-            <label >Confirm Password</label> <br/>
-            {verifyConfirmPassword()}
-            <label >Email</label> <br/>
-            {verifyEmail()}
-            <label >Phone</label> <br/>
-            {verifyPhoneNr()}
-            {VerifySubmit()}
-            <button className='registerBackButton' onClick={handleBack}>Back</button>
-            </div>
+            <div className='box-elements'>
+            <section className="login" id='login'>
+                <h1 className='heading'> Create Account</h1>
+                <div className="box-container-login">
+                    <div className="box-login">
+                        <div className='pinboard'>
+                            <div className='box-input-register'>
+                                <label >First Name</label> <br/>
+                                {verifyFirstName()}
+                                <label >Last Name</label> <br/>
+                                {verifyLastName()}
+                                <label >Password</label> <br/>
+                                {verifyPassword()}
+                                <label >Confirm Password</label> <br/>
+                                {verifyConfirmPassword()}
+                                <label >Email</label> <br/>
+                                {verifyEmail()}
+                                <label >Phone</label> <br/>
+                                {verifyPhoneNr()}
+                            </div>
+                            <div>
+                                {VerifySubmit()}
+                                <button className='btn registerBackButton' onClick={handleBack}>Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </>
 }

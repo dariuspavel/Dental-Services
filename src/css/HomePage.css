@@ -16,7 +16,7 @@ section{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url(../images/clinic_main_room.jpeg) no-repeat;
+    background: url(../images/clinic_main_room.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -29,7 +29,7 @@ section{
 
 .home .content h3{
     font-size: 6rem;
-    color: var(--black);
+    color: var(--white);
     line-height: 1.2;
 }
 
@@ -112,60 +112,37 @@ section{
     line-height: 2;
 }
 
-.team .slide{
+.swiper-wrapper{
+    display: inline-flex;
+}
+
+.swiper-slide {
+    display: block;
+    overflow-x: auto;
+    width: 20%;
+    margin-right: 2rem;
     text-align: center;
 }
 
-.team .slide .image{
-    position: relative;
-    overflow: hidden;
+.swiper-slide .box h3{
+    font-size: medium;
 }
 
-.team .slide .image img{
+.swiper-slide .box span{
+    font-size: small;
+}
+
+.swiper-slide:hover {
+    transform: translateY(-10px);
+    transform: scale(1.1);
+}
+
+.team-image img {
     width: 100%;
+    height: auto;
+    border-radius: 5%;
 }
 
-.team .slide .image .share{
-    padding: 2rem;
-    position: absolute;
-    bottom: -10rem;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, .8);
-}
-
-.team .slide:hover .image .share{
-    bottom: 0;
-
-}
-
-.team .slide .image .share a{
-    font-size: 3rem;
-    margin: 0 1rem;
-    color: var(--white);
-}
-
-.team .slide .image .share a:hover{
-    color: var(--secondary);
-}
-
-.team .slide .content{
-    display: flex;
-    padding-top: 1rem;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.team .slide .content h3{
-    font-size: 2rem;
-    color: var(--black);
-}
-
-.team .slide .content span{
-    font-size: 1.5rem;
-    line-height: 2;
-    color: var(--light-color);
-}
 
 @media (max-width: 991px){
     html{
@@ -236,3 +213,4 @@ section{
         font-size: 3rem;
     }
 }
+

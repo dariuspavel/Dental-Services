@@ -1,0 +1,18 @@
+.box-input-register{
+    width: 80%;
+    height: 30rem;
+    border: 1px;
+    border-style: solid;
+    border-color: var(--light-bg);
+    margin: auto;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.box-input-register input{
+    border: 1px;
+    border-style: solid;
+    border-color: var(--light-bg);
+}
