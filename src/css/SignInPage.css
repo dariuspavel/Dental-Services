@@ -3,8 +3,13 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: var(--light-bg);
+    background: rgba(171, 183, 183, 0.5);
 
+}
+
+.box-singin section{
+    position: relative;
+    top: 10%;
 }
 
 /* .contact {

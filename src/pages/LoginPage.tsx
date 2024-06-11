@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { login} from '../api/BackendApi';
 import "../css/LoginPage.css"
 import { useTokenState } from './TokenContext';
@@ -6,6 +6,8 @@ import { useNavigate  } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import Footer from '../footer/footer';
 import Header from '../header/header';
+import "../Interface/DbRoots"
+import { DbRoots } from '../Interface/DbRoots';
 
 
 
@@ -18,8 +20,8 @@ export const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-
     const { token, setToken } = useTokenState();
+    const [login, setLogin] = useState(null); 
     
     const handleBack = () => {
         return navigate("/");
@@ -42,8 +44,18 @@ export const LoginPage = () => {
         // } else {
         //     setMessage("Invalid username or password");
         // }
-        return navigate("/about");
+        return navigate("/");
     }
+
+    useEffect(() =>{
+        fetch(DbRoots.USERS)
+        .then(res =>{
+            return res.json();
+        })
+        .then((data) =>{
+            console.log(data);
+        })
+    }, []);
 
     return<>
         <div className='box-elements'>

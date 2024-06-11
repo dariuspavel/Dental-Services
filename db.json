@@ -7,7 +7,8 @@
       "lastname": "Marius",
       "password": "asdfgh",
       "email": "darius@yahoo.com",
-      "phone": 3423423423
+      "phone": 3423423423,
+      "history": []
     },
     {
       "id": 1668986789580,
@@ -16,7 +17,8 @@
       "lastname": "doctor",
       "password": "doctor",
       "email": "doctor@gmail.com",
-      "phone": 1234567891
+      "phone": 1234567891,
+      "history": []
     },
     {
       "id": 1668986811915,
@@ -25,7 +27,8 @@
       "lastname": "admin",
       "password": "admin",
       "email": "admin@gmail.com",
-      "phone": 1234567891
+      "phone": 1234567891,
+      "history": []
     },
     {
       "id": 1687711240112,
@@ -38,6 +41,11 @@
       "history": []
     }
   ],
+
+  "doctors":[
+
+  ],
+
   "history": [
     {
       "date": "Fri Feb 03 2023",

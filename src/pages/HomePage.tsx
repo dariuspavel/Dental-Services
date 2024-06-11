@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Cookies } from 'react-cookie';
 import { Link, useNavigate } from 'react-router-dom';
 import "../css/HomePage.css"
@@ -24,7 +24,10 @@ export const HomePageView = () => {
     const navigate = useNavigate();
     const cookies = new Cookies();
     const id = cookies.get("id");
-    
+
+    const [open, setOpen] = useState(false);
+    const onClick = () => setOpen(true)
+
     const Logged = () => {
         
 
@@ -43,6 +46,9 @@ export const HomePageView = () => {
     return<>
         <Header/>
         {Logged()}
+        <div onClick={onClick}>
+            { open ? <SignInPageView/> : null }
+        </div>
 
         <head>
             <title>Dental Services</title>
@@ -58,7 +64,7 @@ export const HomePageView = () => {
                         Simply select your desired service, choose a date and time, and receive instant confirmation. 
                         Experience the convenience of managing your dental care with just a few clicks. 
                         Schedule your appointment online today for a healthier smile tomorrow!</p>
-                    <a href="#" className='btn'>make appointment</a>
+                    <button className='btn' onClick={onClick}>make appointment</button>
                 </div>
             </section>
 
